@@ -9,12 +9,17 @@ class WordsController < ApplicationController
 		    "Accept" => "application/json"
 		  },
 		  parameters:{
-		    "entry" => "puppy"
+		    "entry" => "burger"
 		  }
 		  # puts "=================="
 		  # p response
 		  # puts "=================="
 	end
+
+	def show
+		@words = @results.words
+	end
+
 
 	def new
 		# @team = Team.find(params[:team_id].to_i)
@@ -32,6 +37,7 @@ class WordsController < ApplicationController
 		puts "=============="
 
 		@word = Word.new(input)
+
 
 		if @word.save
 			puts "**************************"
@@ -67,12 +73,21 @@ class WordsController < ApplicationController
 		  puts "//////////////////////////////////////"
 		  puts "//////////////////////////////////////"
 
+		  # word.results = 
+
 		  results_array.each do |word|
-		  	variable = {words: word}
-		  	@result << Result.new(variable)
+		  	new_results = Result.create(origin_word: search, result_word: word)
+		  	puts "****************************************"
+		  	puts "********* new_results is ***************"
+		  	puts new_results
+		  	puts "****************************************"
+		  	puts "****************************************"
+		  	word.results << new_results
 		  end
 
-		  redirect to root
+
+
+		  redirect_to :root
 
 	end
 
