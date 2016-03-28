@@ -41,9 +41,7 @@ class WordsController < ApplicationController
 
 		if @word.save
 			puts "**************************"
-			puts "**************************"
 			puts "**** new word created! ***"
-			puts "**************************"
 			puts "**************************"
 		else
 			puts "±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±"
@@ -68,29 +66,32 @@ class WordsController < ApplicationController
 		  # GET ARRAY OF WORD ASSOCIATIONS
 		  results_array = @response.body["associations"].split(/\s*,\s*/)
 		  puts "//////////////////////////////////////"
-		  puts "//////////////////////////////////////"
 		  p results_array
 		  puts "//////////////////////////////////////"
-		  puts "//////////////////////////////////////"
 
-		  # word.results = 
 
-		  results_array.each do |word|
-		  	new_results = Result.create(origin_word: search, result_word: word)
+		  results_array.each do |result|
+		  	new_results = Result.create(origin_word: search, result_word: result)
 		  	puts "****************************************"
 		  	puts "********* new_results is ***************"
 		  	puts new_results
 		  	puts "****************************************"
 		  	puts "****************************************"
-		  	word.results << new_results
+		  	@word.results << new_results
 		  end
-
-
 
 		  redirect_to :root
 
 	end
 
+	def test
+		puts "*************************"
+		p Giphy.search('car')
+		puts "*************************"
+		# @cat = Giphy.search('funny cat', {limit: 50, offset: 25})
+	end
+
+	# PRIVATE SECTION
 	private
 
 
