@@ -1,0 +1,1 @@
+$twinwordkey = Rails.application.secrets.twinword_key
