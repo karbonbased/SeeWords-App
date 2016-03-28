@@ -22,13 +22,30 @@ class WordsController < ApplicationController
 	end
 
 	def create
-		input = params['inputwords']
+		# GET USER INPUT AND CREATE 2 IMPORTANT VARIABLES 
+		# SEARCH -> String to be passed into request for associations
+		# INPUT -> Hash to be passed into DB
+		search = params['inputwords']
+		input = {name: search}
 		puts "=============="
 		p input
 		puts "=============="
 
-		@word = input
+		@word = Word.new(input)
 
+		if @word.save
+			puts "**************************"
+			puts "**************************"
+			puts "**** new word created! ***"
+			puts "**************************"
+			puts "**************************"
+		else
+			puts "±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±"
+			puts "±±±±± creation failed ±±±±±±±±"
+			puts "±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±"
+		end
+
+		# GET WORD ASSOCIATIONS WITH THE USER SEARCH
 		@response = Unirest.post "https://twinword-word-associations-v1.p.mashape.com/associations/",
 		  headers:{
 		    "X-Mashape-Key" => $twinwordkey,
@@ -36,11 +53,13 @@ class WordsController < ApplicationController
 		    "Accept" => "application/json"
 		  },
 		  parameters:{
-		    "entry" => "sound"
+		    "entry" => search
 		  }
-		  # puts "=================="
-		  # p response
-		  # puts "=================="
+		  puts "=================="
+		  p response
+		  puts "=================="
+
+		  
 
 	end
 
