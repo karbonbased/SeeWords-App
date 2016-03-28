@@ -5,17 +5,6 @@
     <%= submit_tag "Send input" %>
 <% end %>
 
-<%= form_for :words do |f| %>
-            <p>
-                        <%= f.label :inputwords %><br>
-                        <%= f.text_field :inputwords %>
-            </p>
-            <p>
-                        <%= f.submit %>
-            </p>
-<% end %>
-
-<% text_field(:post, :title, size: 20) %>
 <hr>
 <% finalwords = @response.body["associations"].split(/\s*,\s*/) %>
 <% finalwords.each do |word| %>
@@ -30,9 +19,3 @@
 	<% end %>
 <hr>
 <%= @response.body %>
-
-<%#= response[associations] %>
-<%# response.body.each do |word| %>
-	<%#= word %>
-
-	<%# end %>

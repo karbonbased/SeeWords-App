@@ -9,7 +9,7 @@ class WordsController < ApplicationController
 		    "Accept" => "application/json"
 		  },
 		  parameters:{
-		    "entry" => "sound"
+		    "entry" => "puppy"
 		  }
 		  # puts "=================="
 		  # p response
@@ -59,7 +59,20 @@ class WordsController < ApplicationController
 		  p response
 		  puts "=================="
 
-		  
+		  # GET ARRAY OF WORD ASSOCIATIONS
+		  results_array = @response.body["associations"].split(/\s*,\s*/)
+		  puts "//////////////////////////////////////"
+		  puts "//////////////////////////////////////"
+		  p results_array
+		  puts "//////////////////////////////////////"
+		  puts "//////////////////////////////////////"
+
+		  results_array.each do |word|
+		  	variable = {words: word}
+		  	@result << Result.new(variable)
+		  end
+
+		  redirect to root
 
 	end
 
