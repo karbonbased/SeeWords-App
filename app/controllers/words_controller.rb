@@ -4,18 +4,18 @@ class WordsController < ApplicationController
 		
 
 		# These code snippets use an open-source library. http://unirest.io/ruby
-		@response = Unirest.post "https://twinword-word-associations-v1.p.mashape.com/associations/",
-		  headers:{
-		    "X-Mashape-Key" => $twinwordkey,
-		    "Content-Type" => "application/x-www-form-urlencoded",
-		    "Accept" => "application/json"
-		  },
-		  parameters:{
-		    "entry" => "burger"
-		  }
-		  puts "=================="
-		  p response
-		  puts "=================="
+		# @response = Unirest.post "https://twinword-word-associations-v1.p.mashape.com/associations/",
+		#   headers:{
+		#     "X-Mashape-Key" => $twinwordkey,
+		#     "Content-Type" => "application/x-www-form-urlencoded",
+		#     "Accept" => "application/json"
+		#   },
+		#   parameters:{
+		#     "entry" => "burger"
+		#   }
+		#   puts "=================="
+		#   p response
+		#   puts "=================="
 	end
 
 	def show
