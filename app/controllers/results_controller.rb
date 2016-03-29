@@ -22,30 +22,32 @@ class ResultsController < ApplicationController
 		# 	puts "***********************"
 			output = result.result_word
 			api_call = "http://api.giphy.com/v1/gifs/search?q="+output+"&api_key=dc6zaTOxFJmzC&limit=1"
-			puts "******************** api_call is *****************************"
+			puts "**************** api_call is **********************"
 			p api_call
-			puts "**************************************************************"
+			puts "***************************************************"
 			@testresult = JSON.parse(HTTParty.get(api_call).body)['data']
+			# next if @testresult != []
+			# next if @testresult[0] != nil
+
 			puts "*************** @testresult from API is **********************"
 			p @testresult
 			puts "**************************************************************"
-			puts "**************************************************************"
-			puts "**************************************************************"
-			puts "**************************************************************"
-			puts "**************** @testresult[0] is ******************************"
+			puts "****** @testresult[0] is ********"
 			p @testresult[0]
-			puts "**************************************************************"
-			puts "**************************************************************"
-			puts "**************************************************************"
-			if @testresult == []
-				puts "**************************"
-				puts "**** NO GIF AVAILABLE ****"
-				puts "**************************"
-			else
-				@first = @testresult[0]
-					
-			end
+			puts "*********************************"
 			@first = @testresult[0]
+			puts "*********** @first is ***********"
+			p @first
+			puts "*********************************"
+			# if @testresult == []
+			# 	puts "**************************"
+			# 	puts "**** NO GIF AVAILABLE ****"
+			# 	puts "**************************"
+			# else
+				# @first = @testresult[0]
+					
+			# end
+			
 			# if @testresult == true
 			# 	@first = @testresult[0]
 			# 	puts "***************"
