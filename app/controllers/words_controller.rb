@@ -1,6 +1,8 @@
 class WordsController < ApplicationController
 
 	def index
+		
+
 		# These code snippets use an open-source library. http://unirest.io/ruby
 		@response = Unirest.post "https://twinword-word-associations-v1.p.mashape.com/associations/",
 		  headers:{
@@ -11,18 +13,17 @@ class WordsController < ApplicationController
 		  parameters:{
 		    "entry" => "burger"
 		  }
-		  # puts "=================="
-		  # p response
-		  # puts "=================="
+		  puts "=================="
+		  p response
+		  puts "=================="
 	end
 
 	def show
-		@words = @results.words
+		@words = @words.results
 	end
 
 
 	def new
-		# @team = Team.find(params[:team_id].to_i)
 		@word = Word.new
 	end
 
@@ -80,15 +81,29 @@ class WordsController < ApplicationController
 		  	@word.results << new_results
 		  end
 
-		  redirect_to :root
+		  redirect_to results_path
 
 	end
 
 	def test
+		api_call = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC"
+	
+	    @results =  JSON.parse(HTTParty.get(api_call).body)['data']
 		puts "*************************"
-		p Giphy.search('car')
+		@first = @results[0]		
+		@images = @first["images"]
 		puts "*************************"
-		# @cat = Giphy.search('funny cat', {limit: 50, offset: 25})
+		puts "*************************"
+		p @images
+		puts "*****************************"
+		puts "***** @images[fixed_height] is  ********"
+		p @images["fixed_height"]
+		image = @images["fixed_height"]
+		puts "****** image url is *******************"
+		p image["url"]
+		@image_url = image["url"]
+		puts "*************************"
+
 	end
 
 	# PRIVATE SECTION
