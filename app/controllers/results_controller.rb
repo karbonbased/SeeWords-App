@@ -6,7 +6,8 @@ class ResultsController < ApplicationController
 		p @lastword
 		puts "********************"
 
-		api_call = "http://api.giphy.com/v1/gifs/search?q="+@lastword.name+"&api_key=dc6zaTOxFJmzC"
+		# create an API call to Giphy, limit=1 because we just need the first
+		api_call = "http://api.giphy.com/v1/gifs/search?q="+@lastword.name+"&api_key=dc6zaTOxFJmzC&limit=1"
 	
 	    results =  JSON.parse(HTTParty.get(api_call).body)['data']
 		puts "*************************"
@@ -20,20 +21,45 @@ class ResultsController < ApplicationController
 			# p result.result_word
 		# 	puts "***********************"
 			output = result.result_word
-			api_call = "http://api.giphy.com/v1/gifs/search?q="+output+"&api_key=dc6zaTOxFJmzC"
-		# 	puts "************"
+			api_call = "http://api.giphy.com/v1/gifs/search?q="+output+"&api_key=dc6zaTOxFJmzC&limit=1"
+			puts "******************** api_call is *****************************"
 			p api_call
-		# 	puts "************"
+			puts "**************************************************************"
 			@testresult = JSON.parse(HTTParty.get(api_call).body)['data']
+			puts "*************** @testresult from API is **********************"
 			p @testresult
-		# 	puts "*************************"
+			puts "**************************************************************"
+			puts "**************************************************************"
+			puts "**************************************************************"
+			puts "**************************************************************"
+			puts "**************** @testresult[0] is ******************************"
+			p @testresult[0]
+			puts "**************************************************************"
+			puts "**************************************************************"
+			puts "**************************************************************"
+			if @testresult == []
+				puts "**************************"
+				puts "**** NO GIF AVAILABLE ****"
+				puts "**************************"
+			else
+				@first = @testresult[0]
+					
+			end
 			@first = @testresult[0]
-			puts "***************"
-			p @first
-			puts "***************"
-			# @pictures = @first["images"]
-			# image = images["fixed_height"]
-			# @image_url = image["url"]
+			# if @testresult == true
+			# 	@first = @testresult[0]
+			# 	puts "***************"
+			# 	p @first
+			# 	puts "***************"
+				# images = @first["images"]
+				# image = images["fixed_height"]
+				# @image_url = image["url"]
+				
+			# elsif @testresult == false
+			# 	puts "**************************"
+			# 	puts "**** NO GIF AVAILABLE ****"
+			# 	puts "**************************"			
+			# end
 		end
 
 	end
