@@ -1,0 +1,33 @@
+<h1>results index</h1>
+
+<section id="results">
+	<span>Your origin word was:</span>
+	<br>
+	<%#= @image_url %>
+	<%= image_tag @image_url %>
+	<br>
+	<%= @lastword.name %>
+
+	<br>
+	<br> 
+
+	<p>
+		<span>Your Word Associations Are:</span>
+		<br>
+		<% @lastword.results.each do |word| %>
+		<%= word.result_word %>
+		<br>
+		<% end %>
+
+	</p>
+	
+	<hr>
+	<%= @testresult %>
+	<hr>
+	<% pics = @first["images"] %>
+	
+	<%= pics["fixed_height"] %>
+	<hr>
+	<% pic = pics["fixed_height"] %>
+	<%= image_tag pic["url"] %>
+</section>
