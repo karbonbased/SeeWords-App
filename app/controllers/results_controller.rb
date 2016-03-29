@@ -28,7 +28,8 @@ class ResultsController < ApplicationController
 			@testresult = JSON.parse(HTTParty.get(api_call).body)['data']
 			# next if @testresult != []
 			# next if @testresult[0] != nil
-
+			puts "&&&&&&&&&& is @testresult == [] &&&&&&&&&&&&"
+			p @testresult == []
 			puts "*************** @testresult from API is **********************"
 			p @testresult
 			puts "**************************************************************"
@@ -63,6 +64,8 @@ class ResultsController < ApplicationController
 			# 	puts "**************************"			
 			# end
 		end
+
+		
 
 	end
 end
