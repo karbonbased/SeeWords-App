@@ -23,11 +23,11 @@
 	
 	<hr>
 	<%#= @testresult %>
-	<hr>
-	<%# pics = @first["images"] %>
+	<!-- <hr> -->
+	<% pics = @first["images"] %>
 	
 	<%#= pics["fixed_height"] %>
-	<hr>
-	<%# pic = pics["fixed_height"] %>
-	<%#= image_tag pic["url"] %>
+	<!-- <hr> -->
+	<% pic = pics["fixed_height"] %>
+	<%= image_tag pic["url"] %>
 </section>
