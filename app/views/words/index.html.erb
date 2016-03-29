@@ -6,16 +6,17 @@
 <% end %>
 
 <hr>
-<% finalwords = @response.body["associations"].split(/\s*,\s*/) %>
-<% finalwords.each do |word| %>
-<%= word %><br>
-<% end %>
-<hr>
-<%= @response.body["associations"] %>
-<hr>
-<% @response.body.each do |list| %>
-		<%= list %>
+<%# finalwords = @response.body["associations"].split(/\s*,\s*/) %>
+<%# finalwords.each do |word| %>
+<%#= word %>
+<!-- <br> -->
+<%# end %>
+<!-- <hr> -->
+<%#= @response.body["associations"] %>
+<!-- <hr> -->
+<%# @response.body.each do |list| %>
+		<%#= list %>
 
-	<% end %>
-<hr>
-<%= @response.body %>
+	<%# end %>
+<!-- <hr> -->
+<%#= @response.body %>
