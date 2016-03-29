@@ -1,11 +1,18 @@
-<h1>INDEX PAGE!</h1>
+<h1>Visual Word Association</h1>
 
-<%= form_tag words_path do %>
+
+<h3>Think of a word and...</h3>
+<section id="search-form">
+
+	<%= form_tag words_path do %>
     <%= text_field_tag :inputwords %>
     <%= submit_tag "Send input" %>
 <% end %>
 
-<hr>
+</section>
+
+
+
 <%# finalwords = @response.body["associations"].split(/\s*,\s*/) %>
 <%# finalwords.each do |word| %>
 <%#= word %>
