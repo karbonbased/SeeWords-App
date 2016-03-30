@@ -31,40 +31,6 @@ class ResultsController < ApplicationController
 			puts "++++++++++++++"
 			@imageurl = @images["imageurl"]
 			p @imageurl
-
-
-
-			# puts "**************** @images[imageurl] is ***********************"
-			# @imageurl = @images["imageurl"]
-			# puts "**************************************************************"
-
-			# @first = @testresult[0]
-			# puts "*********** @first is ***********"
-			# p @first
-			# puts "*********************************"
-			# if @testresult == []
-			# 	puts "**************************"
-			# 	puts "**** NO GIF AVAILABLE ****"
-			# 	puts "**************************"
-			# else
-				# @first = @testresult[0]
-					
-			# end
-			
-			# if @testresult == true
-			# 	@first = @testresult[0]
-			# 	puts "***************"
-			# 	p @first
-			# 	puts "***************"
-				# images = @first["images"]
-				# image = images["fixed_height"]
-				# @image_url = image["url"]
-				
-			# elsif @testresult == false
-			# 	puts "**************************"
-			# 	puts "**** NO GIF AVAILABLE ****"
-			# 	puts "**************************"			
-			# end
 		end
 
 		
