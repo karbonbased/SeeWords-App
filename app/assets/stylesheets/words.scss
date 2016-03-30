@@ -16,7 +16,7 @@ h1 {
 }
 
 h3 {
-	margin-top: 3em;
+	margin-top: 1.5em;
 	text-align: center;
 	font-size: 1.5em;
 	margin-bottom: 0.2em;
@@ -53,11 +53,16 @@ input[type=submit]:hover {
 	color: white;
 }
 
+#error-msg {
+  text-align: center;
+  text-transform: uppercase;
+}
+
 // CREATE LOADING ANIMATION
 .sk-circle {
-  margin: 100px auto;
-  width: 40px;
-  height: 40px;
+  margin: 5px auto;
+  width: 25em;
+  height: 25em;
   position: relative;
 }
 .sk-circle .sk-child {
@@ -73,7 +78,8 @@ input[type=submit]:hover {
   margin: 0 auto;
   width: 15%;
   height: 15%;
-  background-color: #333;
+  background-image: url('collie-white.png');
+  // background-color: rgba(255,255,255,0.7);
   border-radius: 100%;
   -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
           animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
