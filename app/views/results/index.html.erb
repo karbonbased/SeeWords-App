@@ -11,18 +11,28 @@
 	<br>
 	<br> 
 
-	<p>
-		<span>Your Word Associations Are:</span>
-		<br>
-		<% @lastword.results.each do |word| %>
-		<%= word.result_word %>
+	<span>Your Word Associations Are:</span>
+
+	<section id="resultsArray">
+		<% @wordresults.each do |word| %>
+		<div class="result-container">
+			<%= image_tag(word.url, :class => "img") %>
+			
+			
+			<br>
+			<div class="result-word">
+				<%= word.result_word %>
+			</div>
+		</div>
 		<br>
 		<% end %>
+	</section>
+		
 
-	</p>
+	
 	
 	<hr>
-	<%= image_tag @imageurl %>
+	<%#= image_tag @imageurl %>
 
 	<!-- TESTING @result -->
 </section>

@@ -16,3 +16,28 @@ span {
 	text-transform: uppercase; 
 	text-shadow: 1px 1px rgba(255,255,255, 0.5);
 }
+
+#resultsArray {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-end;
+}
+
+.result-container {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.img {
+	max-height: 14rem;
+	/*margin: 1rem;*/
+}
+
+.result-word {
+
+}

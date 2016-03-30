@@ -33,9 +33,9 @@ class WordsController < ApplicationController
 		# INPUT -> Hash to be passed into DB
 		search = params['inputwords']
 		input = {name: search}
-		puts "=============="
-		p input
-		puts "=============="
+		# puts "=============="
+		# p input
+		# puts "=============="
 
 		@word = Word.new(input)
 
@@ -60,25 +60,42 @@ class WordsController < ApplicationController
 		  parameters:{
 		    "entry" => search
 		  }
-		  puts "=================="
-		  p response
-		  puts "=================="
+		  # puts "=================="
+		  # p response
+		  # puts "=================="
 
 		  # GET ARRAY OF WORD ASSOCIATIONS
 		  results_array = @response.body["associations"].split(/\s*,\s*/)
-		  puts "//////////////////////////////////////"
-		  p results_array
-		  puts "//////////////////////////////////////"
+		  # puts "//////////////////////////////////////"
+		  # p results_array
+		  # puts "//////////////////////////////////////"
 
 
 		  results_array.each do |result|
+		  	# puts "////////// result is ///////////////"
+		  	# p result
+		  	# puts "///////////////////////////////////"
 		  	new_results = Result.create(origin_word: search, result_word: result)
-		  	puts "****************************************"
-		  	puts "********* new_results is ***************"
-		  	puts new_results
-		  	puts "****************************************"
-		  	puts "****************************************"
+		  	# puts "****************************************"
+		  	# puts "********* new_results is ***************"
+		  	# puts new_results
+		  	# puts "****************************************"
+		  	# puts "****************************************"
 		  	@word.results << new_results
+
+		  	# puts "////////// result is ///////////////"
+		  	# p result@imageurl = @images["imageurl"]
+		  	# puts "///////////////////////////////////"
+
+		  	# PIXPLORER API CALL ON result begin to save to database test
+		  	api_call = "http://api.pixplorer.co.uk/image?word="+result+"&amount=1&size=m"
+		  	response = JSON.parse(HTTParty.get(api_call).body)['images']
+			images = response[0]
+			@imageurl = images["imageurl"]
+			puts "******** @imageurl is **************"
+			p @imageurl
+			puts "************************************"
+			new_results.update(:url => @imageurl)
 		  end
 
 		  redirect_to results_path
