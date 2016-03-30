@@ -30,16 +30,18 @@ class ResultsController < ApplicationController
 			# next if @testresult[0] != nil
 			puts "&&&&&&&&&& is @testresult == [] &&&&&&&&&&&&"
 			p @testresult == []
-			puts "*************** @testresult from API is **********************"
-			p @testresult
-			puts "**************************************************************"
-			puts "****** @testresult[0] is ********"
-			p @testresult[0]
-			puts "*********************************"
+			# puts "*************** @testresult from API is **********************"
+			# p @testresult
+			# # puts "**************************************************************"
+			# puts "****** @testresult[0] is ********"
+			# p @testresult[0]
+			# puts "*********************************"
+			
 			@first = @testresult[0]
-			puts "*********** @first is ***********"
-			p @first
-			puts "*********************************"
+			
+			# puts "*********** @first is ***********"
+			# p @first
+			# puts "*********************************"
 			# if @testresult == []
 			# 	puts "**************************"
 			# 	puts "**** NO GIF AVAILABLE ****"
