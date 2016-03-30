@@ -60,18 +60,26 @@ class WordsController < ApplicationController
 		  parameters:{
 		    "entry" => search
 		  }
-		  # puts "=================="
-		  # p response
-		  # puts "=================="
+		 
+		  puts "********** THIS IS  response.body **********"
+		  p @response.body
+		  puts "*****************"
+		  p @response.body["associations"]
 
 		  # GET ARRAY OF WORD ASSOCIATIONS
-		  results_array = @response.body["associations"].split(/\s*,\s*/)
-		  # puts "//////////////////////////////////////"
-		  # p results_array
-		  # puts "//////////////////////////////////////"
+		  results_array = @response.body["associations"]
 
+		  if results_array.nil?
+		  	@error = "ERROR HAS OCCURED" 
+		  	# return
+		  else
+		  results_split = results_array.split(/\s*,\s*/)
+		
 
-		  results_array.each do |result|
+		  # POP 14 items from the array, leaving 16 to cut the time in half
+		  results_split.pop(14)
+
+		  results_split.each do |result|
 		  	# puts "////////// result is ///////////////"
 		  	# p result
 		  	# puts "///////////////////////////////////"
@@ -98,9 +106,14 @@ class WordsController < ApplicationController
 			new_results.update(:url => @imageurl)
 
 		  end
+		end
 
 		  redirect_to results_path
 
+	end
+
+	def retry
+		@lastword = Word.last
 	end
 
 	def test
