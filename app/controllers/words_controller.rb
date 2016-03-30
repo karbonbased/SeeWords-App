@@ -96,6 +96,7 @@ class WordsController < ApplicationController
 			p @imageurl
 			puts "************************************"
 			new_results.update(:url => @imageurl)
+
 		  end
 
 		  redirect_to results_path

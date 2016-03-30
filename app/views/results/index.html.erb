@@ -1,17 +1,20 @@
 <h1>results index</h1>
 
 <section id="results">
-	<span>Your origin word was:</span>
+	<h2><%= @lastword.name %> <br>
+	Was Your origin word :</h2>
 	<br>
 	<%#= @image_url %>
 	<%= image_tag @image_url %>
+	<%= @nogif %>
 	<br>
-	<%= @lastword.name %>
+
+
 
 	<br>
 	<br> 
 
-	<span>Your Word Associations Are:</span>
+	<h2>Your Word Associations Are:</h2>
 
 	<section id="resultsArray">
 		<% @wordresults.each do |word| %>
