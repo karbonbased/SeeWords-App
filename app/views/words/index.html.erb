@@ -21,24 +21,7 @@
 
 	<%= form_tag words_path do %>
     <%= text_field_tag :inputwords %>
-    <%= submit_tag "Send input", :id => "submit" %>
+    <%= submit_tag "GO", :id => "submit" %>
 <% end %>
 
 </section>
-
-
-
-<%# finalwords = @response.body["associations"].split(/\s*,\s*/) %>
-<%# finalwords.each do |word| %>
-<%#= word %>
-<!-- <br> -->
-<%# end %>
-<!-- <hr> -->
-<%#= @response.body["associations"] %>
-<!-- <hr> -->
-<%# @response.body.each do |list| %>
-		<%#= list %>
-
-	<%# end %>
-<!-- <hr> -->
-<%#= @response.body %>
