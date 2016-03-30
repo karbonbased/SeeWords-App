@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
  root 'words#index'
  get "/words/test" => 'words#test'
+ get "/words/retry" => 'words#retry'
  resources :words do
  	resources :results
  end
  resources :results
 end
 
-#    Prefix Verb   URI Pattern                                Controller#Action
+#           Prefix Verb   URI Pattern                                Controller#Action
 #             root GET    /                                          words#index
 #       words_test GET    /words/test(.:format)                      words#test
+#      words_retry GET    /words/retry(.:format)                     words#retry
 #     word_results GET    /words/:word_id/results(.:format)          results#index
 #                  POST   /words/:word_id/results(.:format)          results#create
 #  new_word_result GET    /words/:word_id/results/new(.:format)      results#new
