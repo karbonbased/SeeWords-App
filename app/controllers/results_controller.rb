@@ -6,7 +6,7 @@ class ResultsController < ApplicationController
 		p @lastword
 		puts "********************"
 
-		# create an API call to Giphy, limit=1 because we just need the first
+		# create an API call to Pixplorer, parameters set to amount=1 & size=m to get 1 result in medium size
 		api_call = "http://api.giphy.com/v1/gifs/search?q="+@lastword.name+"&api_key=dc6zaTOxFJmzC&limit=1"
 	
 	    results =  JSON.parse(HTTParty.get(api_call).body)['data']
@@ -16,30 +16,32 @@ class ResultsController < ApplicationController
 		image = images["fixed_height"]
 		@image_url = image["url"]
 
+
+		# Iteration will use Pixplorer to get an image per result_word as Giphy API returns nil too frequently, breaking the loop
+		# create an API call to Pixplorer, parameters set to amount=1 & size=m to get 1 result in medium size (open API)
 		@lastword.results.each do |result|
-		# 	puts "***********************"
-			# p result.result_word
-		# 	puts "***********************"
 			output = result.result_word
-			api_call = "http://api.giphy.com/v1/gifs/search?q="+output+"&api_key=dc6zaTOxFJmzC&limit=1"
-			puts "**************** api_call is **********************"
+			api_call = "http://api.pixplorer.co.uk/image?word="+output+"&amount=1&size=m"
+			puts "********************* api_call is ***************************"
 			p api_call
-			puts "***************************************************"
-			@testresult = JSON.parse(HTTParty.get(api_call).body)['data']
-			# next if @testresult != []
-			# next if @testresult[0] != nil
-			puts "&&&&&&&&&& is @testresult == [] &&&&&&&&&&&&"
-			p @testresult == []
-			puts "*************** @testresult from API is **********************"
-			p @testresult
-			puts "**************************************************************"
-			puts "****** @testresult[0] is ********"
-			p @testresult[0]
-			puts "*********************************"
-			@first = @testresult[0]
-			puts "*********** @first is ***********"
-			p @first
-			puts "*********************************"
+			puts "*************************************************************"
+			@response = JSON.parse(HTTParty.get(api_call).body)['images']
+			@images = @response[0]
+			p @images
+			puts "++++++++++++++"
+			@imageurl = @images["imageurl"]
+			p @imageurl
+
+
+
+			# puts "**************** @images[imageurl] is ***********************"
+			# @imageurl = @images["imageurl"]
+			# puts "**************************************************************"
+
+			# @first = @testresult[0]
+			# puts "*********** @first is ***********"
+			# p @first
+			# puts "*********************************"
 			# if @testresult == []
 			# 	puts "**************************"
 			# 	puts "**** NO GIF AVAILABLE ****"
