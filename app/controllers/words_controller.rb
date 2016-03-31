@@ -2,22 +2,6 @@ class WordsController < ApplicationController
 
 	def index
 
-		# session[:word_id] = word.id
-		
-		# @error = "akljsdfkljasdfklajsdklfj"
-		# These code snippets use an open-source library. http://unirest.io/ruby
-		# @response = Unirest.post "https://twinword-word-associations-v1.p.mashape.com/associations/",
-		#   headers:{
-		#     "X-Mashape-Key" => $twinwordkey,
-		#     "Content-Type" => "application/x-www-form-urlencoded",
-		#     "Accept" => "application/json"
-		#   },
-		#   parameters:{
-		#     "entry" => "burger"
-		#   }
-		#   puts "=================="
-		#   p response
-		#   puts "=================="
 	end
 
 	def show
@@ -61,26 +45,14 @@ class WordsController < ApplicationController
 
 	   	if results_array.nil?
 	   		puts "^^^^^^^^^^^^ ERROR OCCURED ^^^^^^^^^^^^^ fuck."
-   		 	logger.warn "array is nil, because it ain't in the API" 
 
-	  		@error = "ERROR HAS OCCURED" 
-		  	# redirect_to :back
+	  		# @error = "ERROR HAS OCCURED" 
+		  	redirect_to words_retry_path
 	  	else
 
-			@word = Word.new(input)
+				@word = Word.new(input)
 
-
-			if @word.save
-				puts "**************************"
-				puts "**** new word created! ***"
-				puts "**************************"
-			else
-				puts "±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±"
-				puts "±±±±± creation failed ±±±±±±±±"
-				puts "±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±"
-			end
-
-			results_split = results_array.split(/\s*,\s*/)
+				results_split = results_array.split(/\s*,\s*/)
 		
 		  	# POP 14 items from the array, leaving 16 to cut the time in half
 		  	results_split.pop(14)
@@ -90,11 +62,6 @@ class WordsController < ApplicationController
 			  	# p result
 			  	# puts "///////////////////////////////////"
 			  	new_results = Result.create(origin_word: search, result_word: result)
-			  	# puts "****************************************"
-			  	# puts "********* new_results is ***************"
-			  	# puts new_results
-			  	# puts "****************************************"
-			  	# puts "****************************************"
 			  	@word.results << new_results
 
 			  	# puts "////////// result is ///////////////"
@@ -104,15 +71,15 @@ class WordsController < ApplicationController
 			  	# PIXPLORER API CALL ON result begin to save to database test
 			  	api_call = "http://api.pixplorer.co.uk/image?word="+result+"&amount=1&size=m"
 			  	response = JSON.parse(HTTParty.get(api_call).body)['images']
-				images = response[0]
-				@imageurl = images["imageurl"]
-				puts "******** @imageurl is **************"
-				p @imageurl
-				puts "************************************"
-				new_results.update(:url => @imageurl)
+					images = response[0]
+					@imageurl = images["imageurl"]
+					puts "******** @imageurl is **************"
+					p @imageurl
+					puts "************************************"
+					new_results.update(:url => @imageurl)
+				end # Close of do 
+				redirect_to results_path
 			end
-		end
-	  	redirect_to results_path
   	end
 
 
