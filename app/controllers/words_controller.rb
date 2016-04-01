@@ -67,20 +67,38 @@ class WordsController < ApplicationController
 			  	# puts "////////// result is ///////////////"
 			  	# p result@imageurl = @images["imageurl"]
 			  	# puts "///////////////////////////////////"
+			  	# puts "******* result ****************"
+			  	# p result
+			  	# puts "******************************************"
+			  	#GIPHY API CALL TO begin save to database test, use if else for no results
+			  	api_call = "http://api.giphy.com/v1/gifs/search?q="+result+"&api_key=dc6zaTOxFJmzC&limit=1"
+	
+			    results =  JSON.parse(HTTParty.get(api_call).body)['data']
+			    puts "******************** results[0] is ***************************"
+			    p results[0]
+			    puts "*************************************************"
+				
+				first = results[0]
 
-			  	# PIXPLORER API CALL ON result begin to save to database test
-			  	api_call = "http://api.pixplorer.co.uk/image?word="+result+"&amount=1&size=m"
-			  	response = JSON.parse(HTTParty.get(api_call).body)['images']
-					images = response[0]
-					@imageurl = images["imageurl"]
+				if first.nil?
+					unfound_result = Result.find_by(result_word: result)
+					unfound_result.destroy
+					puts "*********************************"
+					p unfound_result
+					puts "******** item has been deleted from database ********"
+				else
+					images = first["images"]
+					image = images["fixed_height"]
+					@image_url = image["url"]
 					puts "******** @imageurl is **************"
-					p @imageurl
+					p @image_url
 					puts "************************************"
-					new_results.update(:url => @imageurl)
-				end # Close of do 
-				redirect_to results_path
-			end
-  	end
+					new_results.update(:url => @image_url)
+				end #closes if loop on giphy API call
+			end # Close of .each do loop
+			redirect_to results_path
+		end #close of if else for arry_nil check redirects
+  	end # close of 
 
 
 		# # GET WORD ASSOCIATIONS WITH THE USER SEARCH
