@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 	get "/words/retry" => 'words#retry'
 	get '/about' => 'static#about'
 	get '/contact' => 'static#contact'
+	get '/results/previous' => 'results#previous'
 	resources :words do
 		resources :results
 	end
@@ -16,6 +17,7 @@ end
 #      words_retry GET    /words/retry(.:format)                     words#retry
 #            about GET    /about(.:format)                           static#about
 #          contact GET    /contact(.:format)                         static#contact
+# results_previous GET    /results/previous(.:format)                results#previous
 #     word_results GET    /words/:word_id/results(.:format)          results#index
 #                  POST   /words/:word_id/results(.:format)          results#create
 #  new_word_result GET    /words/:word_id/results/new(.:format)      results#new
