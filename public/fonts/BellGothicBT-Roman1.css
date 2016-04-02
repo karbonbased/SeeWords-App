@@ -1,0 +1,12 @@
+/* Webfont: BellGothicBT-Roman */@font-face {
+    font-family: 'BellGothicBT';
+    src: url('BellGothicBT-Roman1.eot'); /* IE9 Compat Modes */
+    src: url('BellGothicBT-Roman1.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('BellGothicBT-Roman1.woff') format('woff'), /* Modern Browsers */
+         url('BellGothicBT-Roman1.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('BellGothicBT-Roman1.svg#BellGothicBT-Roman') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
