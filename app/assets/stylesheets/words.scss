@@ -16,10 +16,12 @@ h1 {
 }
 
 h3 {
-	margin-top: 1.5em;
+	margin-top: 4.5em;
 	text-align: center;
-	font-size: 1.5em;
+	font-size: 1.8em;
 	margin-bottom: 0.2em;
+  letter-spacing: 0.05em;
+  word-spacing: 0.04em;
 }
 
 #search-form {
@@ -46,6 +48,8 @@ input[type=submit] {
 	width: 50%;
 	background-color: hsla(190, 3%, 46%, 0.4);
 	color: white;
+  line-height: 1.4em;
+  height: 1.5em;
 }
 
 input[type=submit]:hover {
@@ -64,6 +68,7 @@ input[type=submit]:hover {
   width: 25em;
   height: 25em;
   position: relative;
+  margin-top: 4.4em;
 }
 .sk-circle .sk-child {
   width: 100%;

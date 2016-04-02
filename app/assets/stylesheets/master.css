@@ -1,3 +1,6 @@
+/*///////////////////////////////////////////*/
+/*/// FONT FACE RULES TO ADD BELL GOTHIC ///*/
+/*//////////////////////////////////////////*/
 /* Webfont: BellGothicBT-Roman */
 @font-face {
     font-family: 'Bell-Gothic-Roman';
@@ -52,31 +55,51 @@
     text-rendering: optimizeLegibility;
 }
 
-* {
-  font-family: "Bell-Gothic-Bold";
+html {
+  font-family: "Bell-Gothic-Roman";
 }
-
-
-
+/*//////////////////////////////////////*/
+/*/////// NAV BAR AND NAV ITEMS ////////*/
+/*//////////////////////////////////////*/
 nav {
- position: fixed;
-    top: 0;
-    z-index: 1;
-    width: 100%;  
-    height: 2em;
-    background-color: rgba(255,255,255,0.9);
-    color: black;
-    padding-top: 50px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;  
+  height: 1.5em;
+  background-color: rgba(255,255,255,0.9);
+  color: black;
+  padding-top: 1.9em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 nav a {
-  color: black;
+  color: hsla(180, 80%, 25%, 0.6);
   text-decoration: none;
-  padding-left: 1.4em;
-  padding-top: 1em;
   line-height: 1.9em;
+  font-family: 'Bell-Gothic-Bold';
+  font-size: 1.1em;
 }
 
 nav a:hover {
-  font-weight: 500;
+  color: hsla(180, 80%, 45%, 1);
+}
+
+.nav-items {
+  margin: 0 auto;
+  padding: 0;
+  margin-bottom: 1.5em;
+  flex-wrap: nowrap;
+  flex: 0 1 auto;
+}
+
+.logo {
+  height: 40px;
+}
+
+h3 {
+  font-family: 'Bell-Gothic-Light';
 }
