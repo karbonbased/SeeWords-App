@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://rubygems.org' #ruby '2.2.3'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -28,6 +28,9 @@ gem 'unirest'
 
 # adding HTTParty to use for giphy requests
 gem 'httparty'
+
+# adding rails12 gem for Heroku deployment
+gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
