@@ -1,3 +1,63 @@
+/* Webfont: BellGothicBT-Roman */
+@font-face {
+    font-family: 'Bell-Gothic-Roman';
+    src: url('../fonts/BellGothicBT-Roman1.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/BellGothicBT-Roman1.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/BellGothicBT-Roman1.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/BellGothicBT-Roman1.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/BellGothicBT-Roman1.svg#BellGothicBT-Roman') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: BellGothicStd-Light */
+@font-face {
+    font-family: 'Bell-Gothic-Light';
+    src: url('../fonts/BellGothicStd-Light1.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/BellGothicStd-Light1.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/BellGothicStd-Light1.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/BellGothicStd-Light1.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/BellGothicStd-Light1.svg#BellGothicStd-Light') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+
+
+/* Webfont: BellGothicStd-Bold */
+@font-face {
+    font-family: 'Bell-Gothic-Bold';
+    src: url('../fonts/BellGothicStd-Bold1.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/BellGothicStd-Bold1.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/BellGothicStd-Bold1.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/BellGothicStd-Bold1.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/BellGothicStd-Bold1.svg#BellGothicStd-Bold') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: BellGothicStd-Black */
+@font-face {
+    font-family: 'Bell-Gothic-Black';
+    src: font-url('../fonts/BellGothicStd-Black1.eot'); /* IE9 Compat Modes */
+    src: font-url('../fonts/BellGothicStd-Black1.eot?#iefix') format('embedded-opentype'), 
+         font-url('../fonts/BellGothicStd-Black1.woff') format('woff'), 
+         font-url('../fonts/BellGothicStd-Black1.ttf') format('truetype'), 
+         font-url('../fonts/BellGothicStd-Black1.svg#BellGothicStd-Black') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+  font-family: "Bell-Gothic-Bold";
+}
+
+
+
 nav {
  position: fixed;
     top: 0;
