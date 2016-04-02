@@ -2,44 +2,36 @@
   <%= render :partial => 'nav' %>
 </header>
 
-<h1>RESULTS</h1>
-
-<section id="results">
-	<h2><%= @lastword.name %> <br>
-	Was Your origin word :</h2>
-	<br>
-	<%#= @image_url %>
-	<%= image_tag @image_url %>
-	<%= @nogif %>
-	<br>
-
-
-
-	<br>
-	<br> 
-
-	<h2>Your Word Associations Are:</h2>
-
-	<section id="resultsArray">
-		<% @wordresults.each do |word| %>
-		<div class="result-container">
-			<%= image_tag(word.url, :class => "img") %>
-			
-			
-			<br>
-			<div class="result-word">
-				<%= word.result_word %>
-			</div>
-		</div>
+<main>
+	<section id="results">
+		<h2><%= @lastword.name %> <br>
+		Was Your origin word :</h2>
 		<br>
-		<% end %>
-	</section>
+		<%#= @image_url %>
+		<%= image_tag @image_url %>
+		<%= @nogif %>
+		<br>
+		<br>
+		<br> 
+		<h2>Your Word Associations Are:</h2>
+
+		<section id="resultsArray">
+			<% @wordresults.each do |word| %>
+			<div class="result-container">
+				<%= image_tag(word.url, :class => "img") %>
+				
+				
+				<br>
+				<div class="result-word">
+					<%= word.result_word %>
+				</div>
+			</div>
+			<br>
+			<% end %>
+		</section>
+			
+
 		
-
-	
-	
-	<hr>
-	<%#= image_tag @imageurl %>
-
-	<!-- TESTING @result -->
-</section>
+		
+	</section>
+</main>

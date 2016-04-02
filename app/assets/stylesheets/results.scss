@@ -1,7 +1,12 @@
 body {
 	margin: 0;
 	padding: 0;
+	color: white;
 }
+
+main {
+	margin-top: 6em;
+ }
 
 h1 {
 	text-align: center;
@@ -39,5 +44,9 @@ span {
 }
 
 .result-word {
-
+	padding: 0;
+	margin: 0;
+	line-height: 0px;
+	margin-bottom: 1em;
+    font-size: 1.3em;
 }
