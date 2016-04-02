@@ -1,16 +1,13 @@
 <script type="text/javascript" src="spinner.js"></script>
 <header>
-  <%= render :partial => 'nav' %>
+  <nav id="nav">
+    <%= link_to 'New Search', root_path, :class => "nav-items"  %> 
+    <%= link_to 'About', about_path, :class => "nav-items" %> 
+    <%= image_tag('wordsmif-final-2.svg', :class => "logo nav-items") %>
+    <%= link_to 'Contact', contact_path, :class => "nav-items" %>
+    <%= link_to 'Previous Search', results_previous_path, :class => "nav-items" %>
+  </nav>
 </header>
-
-
-<!-- <h1>Visual Word Association</h1> -->
-
-<% if @error %>
-  something something something
-  <br>
-  You've had a serious error my friend
-<% end %>
 
 <div class="sk-circle">
   <div class="sk-circle1 sk-child"></div>
@@ -27,12 +24,14 @@
   <div class="sk-circle12 sk-child"></div>
 </div>
 
-<h3>Think of a word and...</h3>
-<section id="search-form">
+<main>
+  <h3>Think of a word and...</h3>
+  <section id="search-form">
 
-	<%= form_tag words_path do %>
-    <%= text_field_tag :inputwords %>
-    <%= submit_tag "GO", :id => "submit" %>
-  <% end %>
+    <%= form_tag words_path do %>
+      <%= text_field_tag :inputwords %>
+      <%= submit_tag "GO", :id => "submit" %>
+    <% end %>
 
-</section>
+  </section>  
+</main>
