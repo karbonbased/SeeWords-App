@@ -1,5 +1,7 @@
 <nav>
-	<a href="/">Home</a>
-	<%= link_to 'About', about_path %> 
-	<%= link_to 'Contact', contact_path %>
+	<%= link_to 'New Search', root_path, :class => "nav-items"  %> 
+	<%= link_to 'About', about_path, :class => "nav-items" %> 
+	<%= image_tag('wordsmif-final-2.svg', :class => "logo nav-items") %>
+	<%= link_to 'Contact', contact_path, :class => "nav-items" %>
+	<%= link_to 'Previous Search', results_previous_path, :class => "nav-items" %>
 </nav>
