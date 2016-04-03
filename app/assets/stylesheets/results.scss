@@ -40,7 +40,6 @@ span {
 
 .img {
 	max-height: 14rem;
-	/*margin: 1rem;*/
 }
 
 .result-word {
@@ -54,12 +53,7 @@ span {
 .single-gif {
 	margin: 0 auto;
 	border: 1px solid aliceblue;
-  // position: fixed;
-  // top: 72%;
-  // left: 50%;
-  // /* bring your own prefixes */
-  // transform: translate(-50%, -50%);
-  flex: 0 1 content;
+	flex: 0 1 content;
 }
 
 h2#single-result {
@@ -69,10 +63,6 @@ h2#single-result {
 	text-transform: uppercase;
     margin: 0;
     padding: 0;
-    // position: fixed;
-    // transform: translate(-50%, -50%);
-    // left: 50%;
-    // top: 40%
 }
 
 main#result {
@@ -91,18 +81,24 @@ a#back {
     text-transform: uppercase;
     font-size: 0.8em;
     word-wrap: break-word;
-    // align-self: 
 }
 
 a#back:hover {
 	 color: hsla(210, 80%, 50%, 1);
   text-decoration: underline;
-  // border-bottom: 1px solid aliceblue;
 }
 
 section#show-info {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
+}
 
+section#show-info a:last-child {
+	align-self: flex-end;
+    margin-top: 0.5em;
+}
+
+section#show-info a img#download {
+	height: 40px;
 }
