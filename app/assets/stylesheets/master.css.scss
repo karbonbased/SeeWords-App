@@ -57,6 +57,12 @@
 
 html {
   font-family: "Bell-Gothic-Roman";
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 1.5em;
 }
 /*//////////////////////////////////////*/
 /*/////// NAV BAR AND NAV ITEMS ////////*/
@@ -114,6 +120,8 @@ nav #current {
 /*//////////////////////////////////////////*/
 
 main {
+  min-height: 100%;
+  margin-bottom: -1.5em;
   opacity: 0;
 
   -webkit-transition: opacity 3s ease-in;
@@ -237,10 +245,16 @@ footer, main:after {
 }
 
 footer {
-  width: 100%;
   background-color: black;
   text-align: left;
   padding-top: 1em;
+  border-top: 1px solid hsla(210,0,100,0.6);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1.5em;
+  width: 100%;
+  margin-bottom: -1.5em;
 }
 
 footer span {
