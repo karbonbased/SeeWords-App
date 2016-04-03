@@ -14,7 +14,7 @@
 		<h2><%= @lastword.name %> <br>
 		Was Your origin word :</h2>
 		<br>
-		<%#= @image_url %>
+		
 		<%= image_tag @image_url %>
 		<%= @nogif %>
 		<br>
@@ -27,7 +27,7 @@
 			<div class="result-container">
 				<%= image_tag(word.url, :class => "img") %>
 				
-				
+				<%= link_to word.result_word, result_path(word.id) %>
 				<br>
 				<div class="result-word">
 					<%= word.result_word %>
