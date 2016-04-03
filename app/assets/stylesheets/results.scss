@@ -57,8 +57,11 @@ div#nogif {
 }
 
 section#results-association {
-	background-color: hsla(210,20,90,0.3);
+	background-color: hsla(210,20,90,0.1);
 	margin-bottom: 4em;
+	padding-top: 1em;
+	border-top: 1px solid hsla(210,0,100,0.6);
+	border-bottom: 1px solid hsla(210,0,100,0.6);
 }
 
 h2#association {
@@ -94,6 +97,16 @@ div.result-container div.result-word a {
     font-family: "Bell-Gothic-Black";
     color: white;
 	text-shadow: 2px 2px black;
+}
+
+div.result-container a:last-child {
+	align-self: flex-end;
+    margin-top: 0.5em;
+    cursor: s-resize;
+}
+
+div.result-container a img {
+	height: 18px;
 }
 
 .img {
@@ -161,13 +174,4 @@ section#show-info a:last-child {
 
 section#show-info a img#download {
 	height: 23px;
-}
-
-footer, main:after {
-	height: 3em;
-}
-
-footer {
-	width: 100%;
-	background-color: black;
 }
