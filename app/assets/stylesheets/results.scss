@@ -50,3 +50,34 @@ span {
 	margin-bottom: 1em;
     font-size: 1.3em;
 }
+
+.single-gif {
+	margin: 0 auto;
+	border: 1px solid aliceblue;
+  position: fixed;
+  top: 72%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+h2#single-result {
+	text-align: center;
+	font-family: "Bell-Gothic-Black";
+	text-shadow: 2px 2px black;
+	text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    // top: 40%
+}
+
+main#result {
+	display: flex;
+	flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8em;
+}
