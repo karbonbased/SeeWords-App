@@ -230,3 +230,20 @@ nav.load {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
 }
+
+
+footer, main:after {
+  height: 1.5em;
+}
+
+footer {
+  width: 100%;
+  background-color: black;
+  text-align: left;
+  padding-top: 1em;
+}
+
+footer span {
+  margin-left: 3.5em;
+  font-size: 0.7em;
+}
