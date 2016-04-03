@@ -1,5 +1,15 @@
+<script type="text/javascript" src="transition.js"></script>
 <header>
-  <%= render :partial => 'nav' %>
+  <nav id="nav">
+    <%= link_to 'New Search', root_path, :class => "nav-items"  %> 
+    <%= link_to 'About', about_path, :class => "nav-items" %> 
+    <%= image_tag('wordsmif-final-2.svg', :class => "logo nav-items") %>
+    <%= link_to 'Contact', contact_path, :class => "nav-items", :id => "current"  %>
+    <%= link_to 'Previous Search', results_path, :class => "nav-items" %>
+  </nav>
 </header>
 
-<h1>CONTACT</h1>
+<main>
+	<h3>CONTACT</h3>
+
+</main>
