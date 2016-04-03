@@ -1,4 +1,18 @@
+<script type="text/javascript">
+$(document).ready(function(){    
+    //Check if the current URL contains '#'
+    if(document.URL.indexOf("#")==-1){
+        // Set the URL to whatever it was plus "#".
+        url = document.URL+"#";
+        location = "#";
+
+        //Reload the page
+        location.reload(true);
+    }
+});
+</script>
 <script type="text/javascript" src="transition.js"></script>
+
 <header>
   <nav id="nav">
     <%= link_to 'New Search', root_path, :class => "nav-items"  %> 
@@ -10,9 +24,10 @@
 </header>
 
 <main id="result">
-
-<%= link_to "Back to Results", results_path %>
-	<section>
+	<section id="show-info">
+		<%= link_to "Back to Results", results_path, :id => "back" %>
+		<br>
+		<br>
 		<h2 id="single-result">
 			<%= @result.result_word %>
 		</h2>
