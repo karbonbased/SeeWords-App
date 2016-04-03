@@ -134,8 +134,8 @@ input[type=submit]:hover {
 /*//////////////////////////////////////////*/
 .sk-circle {
   margin: 5px auto;
-  width: 25em;
-  height: 25em;
+  width: 20em;
+  height: 20em;
   position: relative;
   margin-top: 4.4em;
 }
@@ -152,8 +152,9 @@ input[type=submit]:hover {
   margin: 0 auto;
   width: 15%;
   height: 15%;
-  background-image: url('collie-white.png');
-  // background-color: rgba(255,255,255,0.7);
+  // background-image: url('collie-white.png');
+  background-color: rgba(255,255,255,0.7);
+  border: 2px solid hsla(210, 80%, 50%, 0.6);
   border-radius: 100%;
   -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
           animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
