@@ -12,14 +12,63 @@ h1 {
 	text-align: center;
 }
 
-#results {
+/*#results {
 	margin-left: 3em;
 	padding-bottom: 4em;
-}
+}*/
 
 span {
 	text-transform: uppercase; 
 	text-shadow: 1px 1px rgba(255,255,255, 0.5);
+}
+
+section#origin {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex-wrap: wrap;
+    align-items: center;
+}
+
+section#origin h2 {
+    margin-right: 2em;
+	font-family: "Bell-Gothic-Roman";
+	text-shadow: 2px 2px black;
+	margin-bottom: 0;
+}
+
+section#origin h2 span {
+    text-transform: uppercase;
+    font-family: "Bell-Gothic-Black";
+	text-shadow: 2px 2px black;
+}
+
+.origin-img {
+	max-height: 14rem;
+	border: 1px solid white;
+	margin-top: 1em;
+}
+
+div#nogif {
+	font-family: "Bell-Gothic-Roman";
+	text-shadow: 2px 2px black;
+	margin-right: 2em;
+}
+
+section#results-association {
+	background-color: hsla(210,20,90,0.3);
+	margin-bottom: 4em;
+}
+
+h2#association {
+	font-family: "Bell-Gothic-Roman";
+	text-shadow: 2px 2px black;
+	font-size: 2.2vw;
+	letter-spacing: 0.03vw;
+	word-spacing: .1vw;
+	text-align: center;
+	margin-bottom: 1.8em;
 }
 
 #resultsArray {
@@ -36,10 +85,20 @@ span {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
+	margin-bottom: 3.5em;
+}
+
+div.result-container div.result-word a {
+	text-decoration: none;
+	text-transform: uppercase;
+    font-family: "Bell-Gothic-Black";
+    color: white;
+	text-shadow: 2px 2px black;
 }
 
 .img {
 	max-height: 14rem;
+	border: 1px solid white;
 }
 
 .result-word {
@@ -61,8 +120,9 @@ h2#single-result {
 	font-family: "Bell-Gothic-Black";
 	text-shadow: 2px 2px black;
 	text-transform: uppercase;
-    margin: 0;
-    padding: 0;
+    margin: 1.5em;
+	padding: 0;
+	margin-bottom: 0em;	
 }
 
 main#result {
@@ -101,4 +161,13 @@ section#show-info a:last-child {
 
 section#show-info a img#download {
 	height: 23px;
+}
+
+footer, main:after {
+	height: 3em;
+}
+
+footer {
+	width: 100%;
+	background-color: black;
 }

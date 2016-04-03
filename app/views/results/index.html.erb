@@ -11,34 +11,43 @@
 
 <main>
 	<section id="results">
-		<h2><%= @lastword.name %> <br>
-		Was Your origin word :</h2>
-		<br>
-		
-		<%= image_tag @image_url %>
-		<%= @nogif %>
+		<section id="origin">
+			<h2>
+				<span>
+					<%= @lastword.name %> 
+				</span>
+				<br>
+				Was Your Origin Word
+			</h2>
+			<br>
+			
+			<%= image_tag @image_url, :class => "origin-img" %>
+			<div id="nogif">
+				<%= @nogif %>
+			</div>
+		</section>
 		<br>
 		<br>
 		<br> 
-		<h2>Your Word Associations Are:</h2>
+		<section id="results-association">
+			<h2 id="association">Your Word Associations Are...</h2>
 
-		<section id="resultsArray">
-			<% @wordresults.each do |word| %>
-			<div class="result-container">
-				<%= image_tag(word.url, :class => "img") %>
-				
-				<%= link_to word.result_word, result_path(word.id) %>
-				<br>
-				<div class="result-word">
-					<%= word.result_word %>
-				</div>
-			</div>
-			<br>
-			<% end %>
+			<section id="resultsArray">
+				<% @wordresults.each do |word| %>
+					<div class="result-container">
+						<div class="result-word">
+							<%= link_to word.result_word, result_path(word.id) %>
+						</div>
+						<%= image_tag(word.url, :class => "img") %>
+					</div>
+					<br>
+				<% end %>
+			</section>	
 		</section>
-			
-
-		
-		
 	</section>
 </main>
+<footer>
+	<span>
+		Copyright &copy;<%= Date.today.year %> Joshua Davis <em>All Rights Reserved</em>
+	</span>
+</footer>
