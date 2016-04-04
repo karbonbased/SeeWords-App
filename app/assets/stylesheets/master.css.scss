@@ -62,7 +62,6 @@ html {
 }
 
 body {
-  // position: relative;
   margin-bottom: 1.5em;
 }
 /*//////////////////////////////////////*/
@@ -123,6 +122,7 @@ nav #current {
 main {
   min-height: 100%;
   margin-bottom: -1.5em;
+  overflow: auto;
   opacity: 0;
 
   -webkit-transition: opacity 3s ease-in;
@@ -240,6 +240,9 @@ nav.load {
   animation-name: fadeInDown;
 }
 
+////////////////////////////////
+////////// FOOTER /////////////
+//////////////////////////////
 
 footer, main:after {
   height: 1.5em;
@@ -261,4 +264,73 @@ footer {
 footer span {
   margin-left: 3.5em;
   font-size: 0.7em;
+}
+
+//////////////////////////////////////
+////////// STATIC PAGES /////////////
+////////////////////////////////////
+
+h2#static {
+  font-family: "Bell-Gothic-Roman";
+  text-shadow: 2px 2px black;
+  margin-bottom: 1.25em;
+  text-align: center;
+
+  // margin-top: 4.5em;
+  // text-align: center;
+  // font-size: 1.8em;
+  // margin-bottom: 0.2em;
+  // letter-spacing: 0.05em;
+  // word-spacing: 0.04em;
+  // color: rgba(255, 255, 255, 0.8);
+  // text-shadow: 2px 2px black;
+}
+
+section#about {
+  background-color: hsla(210, 0%, 10%, 0.9);
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em;
+  padding-top: 0.5em;
+}
+
+section#about p {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section#contact {
+  background-color: hsla(210, 0%, 10%, 0.9);
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em;
+  padding-top: 0.5em;
+}
+
+section#contact p {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+address {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+address {
+  font-family: "Bell-Gothic-Roman";
+  font-style: normal;
+}
+
+address a {
+  color: white;
+  text-decoration: none;
+}
+
+form#donate {
+  margin-right: auto;
+  margin-left: auto;
 }
