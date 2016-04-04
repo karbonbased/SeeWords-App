@@ -22,6 +22,7 @@ module Word2pics
 
     # adding for heroku deployment
     config.serve_static_files = true
+    config.assets.compile = true
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
