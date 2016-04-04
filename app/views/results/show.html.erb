@@ -31,8 +31,8 @@ $(document).ready(function(){
 		<h2 id="single-result">
 			<%= @result.result_word %>
 		</h2>
-		 <%= image_tag(@result.url, :class => "single-gif") %>
-		 <a href=<%= @result.url %> download><%= image_tag('disk-download-white.svg', :id => "download") %></a>
+		 <%= image_tag(@result.url_lg, :class => "single-gif") %>
+		 <a href=<%= @result.url_lg %> download><%= image_tag('disk-download-white.svg', :id => "download") %></a>
 	</section>
 </main>
 <footer>

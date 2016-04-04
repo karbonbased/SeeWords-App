@@ -57,6 +57,10 @@ class WordsController < ApplicationController
 			  	api_call = "http://api.giphy.com/v1/gifs/search?q="+result+"&api_key=dc6zaTOxFJmzC&limit=1"
 			    results =  JSON.parse(HTTParty.get(api_call).body)['data']
 				first = results[0]
+				puts "***************************"
+				p first
+				puts "**************************"
+
 
 				# if the request has no results, delete that result from the Result database
 				if first.nil?
@@ -71,6 +75,10 @@ class WordsController < ApplicationController
 					image = images["fixed_height"]
 					@image_url = image["url"]
 					new_results.update(:url => @image_url)
+					# get the original verstion of the image url too
+					image_lg = images["original"]
+					@image_lg_url = image_lg["url"]
+					new_results.update(:url_lg => @image_lg_url)
 				end #closes if loop on giphy API call
 			end # Close of .each do loop
 			redirect_to results_path
