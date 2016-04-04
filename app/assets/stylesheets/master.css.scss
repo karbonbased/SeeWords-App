@@ -55,6 +55,28 @@
     text-rendering: optimizeLegibility;
 }
 
+/* FONTELLO EMAIL SYMBOL */
+@font-face {
+  font-family: 'icons';
+  src: url('../fonts/fontello.eot?13948446');
+  src: url('../fonts/fontello.eot?13948446#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff2?13948446') format('woff2'),
+       url('../fonts/fontello.woff?13948446') format('woff'),
+       url('../fonts/fontello.ttf?13948446') format('truetype'),
+       url('../fonts/fontello.svg?13948446#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-mail:before { content: '\e800'; } /* '' */
+.icon-mail-squared:before { content: '\e801'; } /* '' */
+.icon-mail-1:before { content: '\e802'; } /* '' */
+.icon-email:before { content: '\e803'; } /* '' */
+.icon-mail-2:before { content: '\e804'; } /* '' */
+
+/*//////////////////////////////////////*/
+/*////////// BASIC HTML CODE ///////////*/
+/*//////////////////////////////////////*/
 html {
   font-family: "Bell-Gothic-Roman";
   position: relative;
@@ -333,4 +355,11 @@ address a {
 form#donate {
   margin-right: auto;
   margin-left: auto;
+}
+
+i {
+  font-family: 'icons';
+  font-style: normal;
+  font-size: 0.9em;
+  color: white;
 }
