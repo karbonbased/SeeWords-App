@@ -38,7 +38,9 @@
 						<div class="result-word">
 							<%= link_to word.result_word, result_path(word.id) %>
 						</div>
-						<%= image_tag(word.url, :class => "img") %>
+						<a href="/results/<%= word.id %>">
+							<%= image_tag(word.url, :class => "img") %>
+						</a>
 						 <a href=<%= word.url %> download><%= image_tag('disk-download-white.svg', :id => "download") %></a>
 					</div>
 					<br>
