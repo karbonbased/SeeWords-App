@@ -1,6 +1,6 @@
 =WordSmif
 
-(wordsmif.herokuapp.com)
+[wordsmif.herokuapp.com]
 
 ==Description
 
