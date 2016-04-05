@@ -32,15 +32,15 @@ section#origin {
 }
 
 section#origin h2 {
-    margin-right: 2em;
+   margin-right: 2em;
 	font-family: "Bell-Gothic-Roman";
 	text-shadow: 2px 2px black;
 	margin-bottom: 0;
 }
 
 section#origin h2 span {
-    text-transform: uppercase;
-    font-family: "Bell-Gothic-Black";
+   text-transform: uppercase;
+   font-family: "Bell-Gothic-Black";
 	text-shadow: 2px 2px black;
 }
 
@@ -127,7 +127,9 @@ div.result-container a img#download {
 .single-gif {
 	margin: 0 auto;
 	border: 1px solid aliceblue;
-	flex: 0 1 content;
+	flex: 0 1 auto;
+	max-height: 725px;
+	max-width: 650px;
 }
 
 h2#single-result {
@@ -135,9 +137,10 @@ h2#single-result {
 	font-family: "Bell-Gothic-Black";
 	text-shadow: 2px 2px black;
 	text-transform: uppercase;
-    margin: 1.5em;
+   margin: 1.5em;
 	padding: 0;
-	margin-bottom: 0em;	
+	margin-bottom: 0em;
+   margin-top: 0;
 }
 
 main#result {
@@ -161,6 +164,10 @@ a#back {
 a#back:hover {
  	color: hsla(210, 80%, 50%, 1);
   	text-decoration: underline;
+  	text-decoration-line: underline;
+  	-moz-text-decoration: underline;
+  	-webkit-text-decoration: underline;
+
 }
 
 section#show-info {
@@ -176,4 +183,20 @@ section#show-info a:last-child {
 
 section#show-info a img#download {
 	height: 23px;
+}
+
+@media (max-width: 700px) {
+	.single-gif {
+		max-height: 525px;
+		max-width: 450px;
+	}
+
+	section#origin h2 {
+    	margin-right: 0;
+	}
+
+	h2#association {
+		font-size: 1.3em;
+	}
+
 }

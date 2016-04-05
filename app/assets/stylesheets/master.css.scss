@@ -129,6 +129,10 @@ nav a:hover {
   height: 40px;
 }
 
+.alt-logo {
+  display: none;
+}
+
 h3 {
   font-family: 'Bell-Gothic-Light';
 }
@@ -364,4 +368,76 @@ i {
   color: white;
 }
 
-@media
+/*///////////////////////////////////////////*/
+/*////////////// MEDIA QUERIES /////////////*/
+/*/////////////////////////////////////////*/
+
+@media (max-width: 700px) {
+  nav a {
+  line-height: 1.9em;
+  font-family: 'Bell-Gothic-Bold';
+  font-size: 0.8em;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  h3 {
+  margin-top: 1em;
+  font-size: 0.9em;
+  /*margin-bottom: 0.2em;*/
+  letter-spacing: 0.04em;
+  word-spacing: 0.02em;
+  }
+
+  #inputwords {
+  font-size: 1.5em;
+  margin-bottom: 0.4em;
+  border: 1px solid hsla(210, 25%, 50%, 1);
+  border-radius: 5px;
+  padding: .05em;
+  width: 70%;
+  }
+}
+
+@media (max-width: 450px) {
+  #hamburger {
+    display: block;
+    margin-left: 1.5em;
+    margin-bottom: 1.3em;
+    width: 35px;
+  }
+
+ /* .nav-link {
+    display: none;
+  }*/
+  nav {
+    flex-direction: column;
+    padding-top: 0.6em;
+    justify-content: space-between;
+    height: 5.5em;
+    padding-bottom: 0.4em;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .alt-logo {
+    display: block;
+    width: 8em;
+  }
+
+  nav a {
+    line-height: 1em;
+  }
+
+  main {
+    margin-top: 10em;
+  }
+
+  .nav-items {
+    margin: 0;
+  }
+}
