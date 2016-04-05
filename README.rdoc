@@ -1,26 +1,26 @@
-==WordSmif
+=WordSmif
 
 [wordsmif.herokuapp.com]
 
-=Description
+==Description
 
 This is a Ruby on Rails web app with RESTful routes, utilizing multiple APIs. Users visting the site can search any keyword and the app will process that request through a word association API, those results are then sent through the Giphy API. The result is a grid of the top trending gif for the user's keyword and all word associations results. Upon first visiting the site, any user can see what the last search performed was by clicking on Previous Search, throughout a user's session this button acts as a way for the user to return to their most recent search while navigating the rest of the site.
 
 
-##Tech used / Stack
+==Tech used / Stack
 
 - Ruby on Rails
 - PostgreSQL
 - HTTParty
 - Unirest
-- Twinword Word Association API (https://www.twinword.com/api/word-associations.php)
-- Giphy API  	(https://api.giphy.com/)
+- Twinword Word Association API [https://www.twinword.com/api/word-associations.php]
+- Giphy API  	[https://api.giphy.com/]
 - JavaScript / JQuery
 - CSS3
 - HTML5
 
 
-##Features
+==Features
 
 - User search function through search bar
 - Access to the previous user's last search result
@@ -33,7 +33,7 @@ This is a Ruby on Rails web app with RESTful routes, utilizing multiple APIs. Us
 - 2 models with a has many, belongs to relationship 
 
 
-##Future Implementations
+==Future Implementations
 
 - Info box on homepage for a "guided tutorial" or welcome greeting overlay 
 - Access to display the last 20 search terms
@@ -46,22 +46,10 @@ Core Information:
 
 * Ruby version 2.2.3
 
-* System dependencies
+* Rails version 4.2.6
 
-* Configuration
+* Bundle Install (requires httparty and unirest for API calls, rails_12factor for heroku deployment)
 
-* Database creation
+* PostgreSQL Database version 9.5.1
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* rake db:migrate should set up db
