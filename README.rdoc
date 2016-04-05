@@ -1,11 +1,50 @@
-== README
+#WordSmif
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[wordsmif.herokuapp.com]
 
-Things you may want to cover:
+##Description
 
-* Ruby version
+This is a Ruby on Rails web app with RESTful routes, utilizing multiple APIs. Users visting the site can search any keyword and the app will process that request through a word association API, those results are then sent through the Giphy API. The result is a grid of the top trending gif for the user's keyword and all word associations results. Upon first visiting the site, any user can see what the last search performed was by clicking on Previous Search, throughout a user's session this button acts as a way for the user to return to their most recent search while navigating the rest of the site.
+
+
+##Tech used / Stack
+
+- Ruby on Rails
+- PostgreSQL
+- HTTParty
+- Unirest
+- Twinword Word Association API (https://www.twinword.com/api/word-associations.php)
+- Giphy API  	(https://api.giphy.com/)
+- JavaScript / JQuery
+- CSS3
+- HTML5
+
+
+##Features
+
+- User search function through search bar
+- Access to the previous user's last search result
+- Access to most recent search result
+- Access to view the original sized gif
+- Quick download feature for fixed height gifs
+- Quick download feature for original sized gifs
+- Page transition animations
+- Fully responsive design with a mobile specific nav
+- 2 models with a has many, belongs to relationship 
+
+
+##Future Implementations
+
+- Info box on homepage for a "guided tutorial" or welcome greeting overlay 
+- Access to display the last 20 search terms
+- Collapse and expand menu for mobile
+
+
+== Deployment Information
+
+Core Information:
+
+* Ruby version 2.2.3
 
 * System dependencies
 
